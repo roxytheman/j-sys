@@ -1,0 +1,44 @@
+// SET ERROR LOG
+
+// Gathers log payload data at positioned point in script sequence
+// to be used to submit an error or progress log.
+
+// Function Name : jsys.setErrorLog
+// Parameters : severity ; notify
+// Use example : jsys.setErrorLog ( severity ; notify )
+
+JSONSetElement ( "" ; 
+
+	[ "error.code" ; Get ( LastError ) ; 2 ] ;
+	[ "error.script.line" ; GetValue ( Get ( LastErrorLocation ) ; 3 ) ; 1 ] ;
+	[ "error.script.name" ; GetValue ( Get ( LastErrorLocation ) ; 1 ) ; 1 ] ;
+	[ "error.script.step" ; GetValue ( Get ( LastErrorLocation ) ; 2 ) ; 1 ] ;
+	[ "error.detail" ; Get ( LastErrorDetail ) ; 1 ] ;
+	[ "error.severity" ; severity ; 2 ] ; // 0 : warning | 1 : error | 2 : fatalError
+	[ "error.notifyAdmin" ; notify ; 5 ] ;
+
+	[ "session.id" ; Get ( UUID ) ; 1 ] ;
+	[ "session.script.current" ; Get ( ScriptName ) ; 1 ] ;
+	[ "session.script.parent" ; If ( IsEmpty ( JSONGetElement ( Get ( ScriptParameter ) ; "session.script.parent" ) ) ; "Not available" ; JSONGetElement ( Get ( ScriptParameter ) ; "session.script.parent" ) ) ; 1 ] ; 
+	[ "session.user" ; Get ( AccountName ) ; 1 ] ;
+	[ "session.mode" ; Case ( Get ( WindowMode ) = 0 ; "Browse" ; Get ( WindowMode ) = 1 ; "Find" ; Get ( WindowMode ) = 3 ; "Preview/Printing" ; Get ( WindowMode ) = 4 ; "Data Viewer" ) ; 1 ] ;
+	[ "session.windowType" ; Case ( Get ( WindowStyle ) = 0 ; "Document Window" ; Get ( WindowStyle ) = 1 ; "Floating Document Window" ; Get ( WindowStyle ) = 2 ; "Dialog Window"  ; Get ( WindowStyle ) = 3 ; "Card Window" ) ; 1 ] ;
+	[ "session.layoutName" ; Get ( LayoutName ) ; 1 ] ;
+	[ "session.tableName" ; Get ( LayoutTableName ) ; 1 ] ;
+	[ "session.created" ; Get ( CurrentHostTimestamp ) ; 1 ] ;
+
+	[ "system.ipAddress" ; GetValue ( Get ( SystemIPAddress ) ; 1 ) ; 1 ] ;
+	[ "system.os" ; Case ( Get ( SystemPlatform ) = -2 ; "Windows" ; Get ( SystemPlatform ) = 1 ; "Mac OS" ; Get ( SystemPlatform ) = 3 ; "iOS" ; Get ( SystemPlatform ) = 4 ; "WebDirect" ; Get ( SystemPlatform ) = 5 ; "Linux" ) ; 1 ] ;
+	[ "system.version" ; Get ( SystemVersion ) ; 1 ] ;
+	[ "system.MACAddress" ; GetValue ( Get ( SystemNICAddress ) ; 2 ) ; 1 ] ;
+	[ "system.machineName" ; Case ( PatternCount ( Get ( InstalledFMPlugins ) ; "BaseElements" ) ; BE_GetMachineName ; PatternCount ( Get ( InstalledFMPlugins ) ; "MBS Plug-In" ) ; MBS( "SystemInfo.ComputerName" ) ; "Not available" ); 1 ] ;
+	[ "system.plugins" ; Get ( InstalledFMPluginsAsJSON ) ; 0 ] 
+
+)
+
+// Severity : 0 : warning | 1 : error | 2 : fatalError
+// Notify : Boolean [ false : do not notify admin | true : notify admin ]
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

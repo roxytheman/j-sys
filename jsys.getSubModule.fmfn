@@ -1,0 +1,15 @@
+// GET SUB MODULE
+
+// Returns the name (string) of currently
+// active subModule
+
+// Function Name : jsys.getSubModule
+// Parameters : 
+// Use example : jsys.getSubModule
+
+JSONGetElement ( $$STATE ; "currentState.subModule" )
+
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

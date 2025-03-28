@@ -1,0 +1,31 @@
+// PASSWORD STRENGTH
+
+// Returns a carriage return separated list of primaryKeys
+// currently selected in current subModule by user
+
+// Function Name : jsys.getSubModuleSelectedKeys
+// Parameters : 
+// Use example : jsys.getSubModuleSelectedKeys
+
+Let ( [
+
+		~source = JSONGetElement ( $$STATE ; "settings.state" ) ;
+		~state = Case ( ~source = "field" ; gsys.setFieldNameInContext ( JSONGetElement ( $$STATE ; "settings.stateArray" ) ) ; ~source = "var" ; "$$" & JSONGetElement ( $$STATE ; "settings.stateArray" ) ) ;
+		~path = Case ( ~source = "field" ; JSONGetElement ( $$STATE ; "currentState.userKey" ) & "." & gsys.getSubModule & ".selected" ; ~source = "var" ; JSONGetElement ( $$STATE ; "currentState.userKey" ) & "." & gsys.getSubModule & ".selected" )
+
+	] ; 
+
+		JSONListKeys ( Evaluate ( ~state ) ; ~path )
+
+)
+
+
+//ver 3.0
+
+// primaryKeys can be use in dAPI calls to read records but not update or delete
+// these keys are also useful to isolate a record set for direct manipulation by
+// FileMaker in a layout context
+
+// GitHub : 
+// Written by: jonni@me.com
+//ver 3.0

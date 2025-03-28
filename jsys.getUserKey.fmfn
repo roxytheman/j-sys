@@ -1,0 +1,13 @@
+// get User Key
+
+// Returns current user key from system state
+
+// Function Name : jsys.getUserKey
+// Parameters : 
+// Use example : jsys.getUserKey
+
+JSONGetElement ( $$STATE ; "currentState.userKey" )
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

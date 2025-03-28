@@ -1,0 +1,16 @@
+// EXTEND PATH
+
+// Returns a system specific path of current record base on  
+// current module + subModule preceding current records primaryKey
+
+// Function Name : jsys.extendPath
+// Parameters : key
+// Use example : jsys.extendPath ( key )
+
+JSONGetElement ( $$STATE ; "currentState.path" ) & "." & key
+
+// This is widely used to read or write record state in STATE
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

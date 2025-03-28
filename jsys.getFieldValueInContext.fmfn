@@ -1,0 +1,14 @@
+// GET FIELD VALUE IN CONTEXT
+
+// Returns value of a field based on current context
+// providing FQFN based on current context
+
+// Function Name : jsys.getFieldValueInContext
+// Parameters : fieldName
+// Use example : jsys.getFieldValueInContext ( "myField" )
+
+GetField ( Get ( LayoutTableName ) & "::" & fieldName )
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

@@ -1,0 +1,18 @@
+// GET PATH
+
+// Returns the current active path based on users
+// whereabouts in the system
+
+// Function Name : jsys.getPath
+// Parameters : 
+// Use example : jsys.getPath
+
+JSONGetElement ( $$STATE ; "currentState.path" )
+
+// This helps identify module.currentRecordsPrimaryKey.subModule
+// The path is widely used to store record arrays in both STATE and RSTATE
+
+// GitHub : 
+// BD Link : https://www.briandunning.com/cf/2787
+// Written by: jonni@me.com
+// V 1.0

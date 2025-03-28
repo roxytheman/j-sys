@@ -1,0 +1,13 @@
+// SET FIELD NAME IN CONTEXT
+
+// Returns FQFN based on current context
+
+// Function Name : jsys.setFieldNameInContext
+// Parameters : fieldName
+// Use example : jsys.setFieldNameInContext ( "myField" )
+
+Case ( PatternCount ( fieldName ; "::" ) ; fieldName ; Get ( LayoutTableName ) & "::" & fieldName )
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

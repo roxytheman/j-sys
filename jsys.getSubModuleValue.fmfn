@@ -1,0 +1,14 @@
+// GET SUB MODULE VALUE
+
+// Returns the value of a field in the context of
+// currently selected subModule
+
+// Function Name : jsys.getSubModuleValue
+// Parameters : field
+// Use example : jsys.getSubModuleValue ( "myField" )
+
+GetField ( JSONGetElement ( $$STATE ; "currentState.module" ) & Upper ( JSONGetElement ( $$STATE ; "currentState.subModule" ) ) & "::" & field )
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

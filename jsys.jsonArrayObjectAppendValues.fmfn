@@ -1,0 +1,28 @@
+// JSON ARRAY OBJECT APPEND VALUES
+
+// Appends a value list to the declared JSON data array
+// and returns the appended array
+
+// Function Name : jsys.jsonArrayObjectAppendValues
+// Parameters : type ; newValues ; array ; path
+// Use example : jsys.jsonArrayObjectAppendValues ( 2 ; List ( 1;2;3;4 ) ; $myJSON ; "myArray[0]myOjects" )
+
+Case ( 
+
+	type = 1 ; "[ \"" & Substitute ( List ( JSONListValues ( array ; path ) ; newValues ) ; "¶" ; "\",\"" ) & "\" ]" ; // string
+
+	type = 2 ; "[ " & Substitute ( List ( JSONListValues ( array ; path ) ; newValues ) ; "¶" ; "," ) & " ]" ; // number
+
+	"Invalid Type"
+
+)
+
+// Type : 1 : String | 2 : Number
+// New Values : 1¶2¶3¶4
+// Array : Name of JSON array source in a variable or field
+// Path : Path to array object in source array
+
+// GitHub : 
+// BD Link : https://www.briandunning.com/cf/2787
+// Written by: jonni@me.com
+// V 1.0

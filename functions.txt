@@ -1,0 +1,42 @@
+gsys.extendPath						key
+gsys.extendUserPath					key
+gsys.getFieldValueInContext			fieldName
+gsys.getModule
+gsys.getPath
+gsys.getPayload						payloadID
+gsys.getPrimaryKey					instance
+gsys.getSubModule
+gsys.getSubModuleSelectedKeys
+gsys.getSubModuleSelectedValues
+gsys.getSubModuleValue				field
+gsys.getUserKey
+gsys.jsonArrayObjectAppendValues	type ; newValues ; array ; path
+gsys.jsonArrayObjectWrapValues		type ; valueList
+gsys.recordState
+gsys.setErrorLog					severity ; notify
+gsys.setFieldNameInContext			fieldName
+gsys.setSubModuleDAPIRead			layouts ; response ; limit ; offset
+
+
+
+
+// PASSWORD STRENGTH
+
+// This function evaluates the strength of a password based  
+// on various characteristics and assigns a strength level 
+// (“Weak,” “Medium,” “Strong,” or “Very Strong”).
+
+// Function Name : passwordStrength
+// Parameters : password
+// Use example : passwordStrength ( "x7GAgagMPQqMfF3pCdVzs" )
+
+
+// This function evaluates how strong a password is based on its length and the variety of characters it contains, 
+// such as numbers, uppercase letters, lowercase letters, and special symbols. Each type of character contributes to a total score, 
+// with longer passwords and more diverse characters earning higher points. Based on the score, the password is rated as 
+// “Weak,” “Medium,” “Strong,” or “Very Strong.” It’s a quick way to check if a password is secure enough.
+
+// GitHub : 
+// BD Link : https://www.briandunning.com/cf/2787
+// Written by: jonni@me.com
+// V 1.0

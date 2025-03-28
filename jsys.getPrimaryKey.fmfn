@@ -1,0 +1,28 @@
+// GET PRIMARY KEY
+
+// Returns primaryKey of current record
+
+// Function Name : jsys.getPrimaryKey
+// Parameters : instance
+// Use example : jsys.getPrimaryKey ( "instance" )
+
+Case ( 
+
+	instance = "parent" ; 
+	GetField ( JSONGetElement ( $$STATE ; "currentState.module" ) & "::a_primaryKey_T" ) ;
+
+	instance = "child" ; 
+	GetField ( JSONGetElement ( $$STATE ; "currentState.module" ) & Upper ( JSONGetElement ( $$STATE ; "currentState.subModule" ) ) & "::a_primaryKey_T"  ) ;
+
+	"Invalid instance" 
+
+)
+
+// The naming convention of primaryKey can be set in STATE when entering
+// a layout. This is especially useful when applying jsys to an existing system
+// where primaryKeys may have varying names across the design and development
+// of the system
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

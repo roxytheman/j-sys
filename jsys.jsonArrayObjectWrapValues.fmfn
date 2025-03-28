@@ -1,0 +1,24 @@
+// JSON ARRAY OBJECT WRAP VALUES
+
+// Returns a value list as wrapped string for JSON data array
+
+// Function Name : jsys.jsonArrayObjectWrapValues
+// Parameters : type ; valueList
+// Use example : jsys.jsonArrayObjectWrapValues ( 2 ; List ( 1;2;3;4 ) )
+
+Case ( 
+
+	type = 1 ; "[ \"" & Substitute ( valueList ; "¶" ; "\",\"" ) & "\" ]" ; // string
+
+	type = 2 ; "[ " & Substitute ( valueList ; "¶" ; "," ) & " ]" ; // number
+
+	"Invalid Type"
+
+)
+
+// Type : 1 : String | 2 : Number
+// Value List : 1¶2¶3¶4
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

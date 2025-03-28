@@ -1,0 +1,13 @@
+// GET PAYLOAD
+
+// Returns script payload from jsys function editor
+
+// Function Name : jsys.getPayload
+// Parameters : payloadID
+// Use example : jsys.getPayload ( "payloadID" )
+
+Evaluate ( Base64Decode( ExecuteSQL ( "SELECT c_payloadBase64_T FROM payload WHERE a_primaryKey_T = ?" ; "" ; "" ; payloadID ) ) )
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

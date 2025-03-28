@@ -1,0 +1,14 @@
+// GET MODULE
+
+// Returns the name (string) of currently
+// active module
+
+// Function Name : jsys.getModule
+// Parameters : 
+// Use example : jsys.getModule
+
+JSONGetElement ( $$STATE ; "currentState.module" )
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

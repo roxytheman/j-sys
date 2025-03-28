@@ -1,0 +1,17 @@
+// EXTEND USER PATH	
+
+// Returns a user specific path of current record base on  
+// current module + subModule following current user's key
+// preceding current records primaryKey
+
+// Function Name : jsys.extendUserPath
+// Parameters : key
+// Use example : jsys.extendUserPath ( "key" )
+
+JSONGetElement ( $$STATE ; "currentState.userKey" ) & "." & JSONGetElement ( $$STATE ; "currentState.subModule" ) & "." & key
+
+// This is widely used to read or write record state in STATE or RSTATE
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0

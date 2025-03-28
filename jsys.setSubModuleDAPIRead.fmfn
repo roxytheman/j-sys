@@ -1,0 +1,51 @@
+// SET SUB MODULE DAPI READ
+
+// Returns dAPI payload for a query reading records
+// from a subModule selection
+
+// Function Name : jsys.setSubModuleDAPIRead
+// Parameters : layouts ; response ; limit ; offset
+// Use example : jsys.setSubModuleDAPIRead ( "myLayoutName" ; "myResponseLayoutName" ; 1000 ; 1 )
+
+While ( [ 
+		
+		~array = gsys.getSubModuleSelectedKeys ;
+		~layouts = layouts ;
+		~response = response ;
+		~limit = limit ;
+		~offset = offset ;
+		~count = ValueCount ( ~array ) ;
+		~result = "" ;
+		~i = 1
+
+	] ; 
+
+		~i ≤ ~count
+
+	; [ 
+
+		~result = JSONSetElement ( ~result ; 
+
+			[ "query[+]a_primaryKey_T" ; GetValue ( ~array ; ~i ) ; 1 ]
+
+		) ;
+
+		~i = ~i + 1
+
+	] ; 
+
+		JSONSetElement ( ~result ; 
+
+			[ "action" ; "read" ; 1 ] ;
+			[ "layouts" ; ~layouts ; 1 ] ;
+			[ "['layout.response']" ; ~response ; 1 ] ;
+			[ "limit" ; ~limit ; 2 ] ; 
+			[ "offset" ; ~offset ; 2 ] 
+		
+		)
+
+)
+
+// GitHub : 
+// Written by: jonni@me.com
+// V 1.0
