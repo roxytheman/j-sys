@@ -14,7 +14,7 @@ Case (
 	instance = "child" ; 
 	GetField ( JSONGetElement ( $$STATE ; "currentState.module" ) & Upper ( JSONGetElement ( $$STATE ; "currentState.subModule" ) ) & "::a_primaryKey_T"  ) ;
 
-	"Invalid instance" 
+	"Invalid instance : 'parent' or 'child'" 
 
 )
 

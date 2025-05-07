@@ -10,8 +10,8 @@
 Let ( [
 
 		~source = JSONGetElement ( $$STATE ; "settings.state" ) ;
-		~state = Case ( ~source = "field" ; gsys.setFieldNameInContext ( JSONGetElement ( $$STATE ; "settings.stateArray" ) ) ; ~source = "var" ; "$$" & JSONGetElement ( $$STATE ; "settings.stateArray" ) ) ;
-		~path = Case ( ~source = "field" ; JSONGetElement ( $$STATE ; "currentState.userKey" ) & "." & gsys.getSubModule & ".selected" ; ~source = "var" ; JSONGetElement ( $$STATE ; "currentState.userKey" ) & "." & gsys.getSubModule & ".selected" )
+		~state = Case ( ~source = "field" ; jsys.setFieldNameInContext ( JSONGetElement ( $$STATE ; "settings.stateArray" ) ) ; ~source = "var" ; "$$" & JSONGetElement ( $$STATE ; "settings.stateArray" ) ) ;
+		~path = Case ( ~source = "field" ; JSONGetElement ( $$STATE ; "currentState.userKey" ) & "." & jsys.getSubModule & ".selected" ; ~source = "var" ; JSONGetElement ( $$STATE ; "currentState.userKey" ) & "." & jsys.getSubModule & ".selected" )
 
 	] ; 
 

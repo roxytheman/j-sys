@@ -8,7 +8,7 @@
 
 Case ( 
 
-	JSONGetElement ( $$STATE ; "settings.state" ) = "field" ; gsys.getFieldValueInContext ( JSONGetElement ( $$STATE ; "settings.stateArray" ) ) ; 
+	JSONGetElement ( $$STATE ; "settings.state" ) = "field" ; jsys.getFieldValueInContext ( JSONGetElement ( $$STATE ; "settings.stateArray" ) ) ; 
 	JSONGetElement ( $$STATE ; "settings.state" ) = "var" ; Evaluate ( "$$" & JSONGetElement ( $$STATE ; "settings.stateArray" ) )
 
 )

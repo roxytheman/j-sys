@@ -1,21 +1,21 @@
-gsys.extendPath						key
-gsys.extendUserPath					key
-gsys.getFieldValueInContext			fieldName
-gsys.getModule
-gsys.getPath
-gsys.getPayload						payloadID
-gsys.getPrimaryKey					instance
-gsys.getSubModule
-gsys.getSubModuleSelectedKeys
-gsys.getSubModuleSelectedValues
-gsys.getSubModuleValue				field
-gsys.getUserKey
-gsys.jsonArrayObjectAppendValues	type ; newValues ; array ; path
-gsys.jsonArrayObjectWrapValues		type ; valueList
-gsys.recordState
-gsys.setErrorLog					severity ; notify
-gsys.setFieldNameInContext			fieldName
-gsys.setSubModuleDAPIRead			layouts ; response ; limit ; offset
+jsys.extendPath						key
+jsys.extendUserPath					key
+jsys.getFieldValueInContext			fieldName
+jsys.getModule
+jsys.getPath
+jsys.getPayload						payloadID
+jsys.getPrimaryKey					instance
+jsys.getSubModule
+jsys.getSubModuleSelectedKeys
+jsys.getSubModuleSelectedValues
+jsys.getSubModuleValue				field
+jsys.getUserKey
+jsys.jsonArrayObjectAppendValues	type ; newValues ; array ; path
+jsys.jsonArrayObjectWrapValues		type ; valueList
+jsys.recordState
+jsys.setErrorLog					severity ; notify
+jsys.setFieldNameInContext			fieldName
+jsys.setSubModuleDAPIRead			layouts ; response ; limit ; offset
 
 
 
