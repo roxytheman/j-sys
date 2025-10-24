@@ -22,7 +22,7 @@ Case (
 // Array : Name of JSON array source in a variable or field
 // Path : Path to array object in source array
 
-// GitHub : 
+// GitHub : https://github.com/roxytheman/j-sys/blob/main/jsys.jsonArrayObjectAppendValues.fmfn
 // BD Link : https://www.briandunning.com/cf/2787
 // Written by: jonni@me.com
 // V 1.0
